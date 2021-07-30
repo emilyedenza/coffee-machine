@@ -2,7 +2,14 @@ require 'kafka'
 require 'json'
 
 module CoffeeMachine
+  # Runs the consumer portion of the Kafka coffee machine.
+  #
+  # @author Dylan Boyd
   class Consumer
+    # Run the consumer interactively in a terminal
+    #
+    # @param broker_url [String] The Kafka broker URL to consume from.
+    # @return [void]
     def self.run(broker_url)
       kafka = Kafka.new(broker_url)
 

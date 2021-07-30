@@ -1,6 +1,10 @@
 module CoffeeMachine::Data
 
+  # The coffee types you can order right here, right now.
   class CoffeeTypes
+    # List all available types of coffee and their attributes.
+    #
+    # @return [Array<CoffeeMachine::Models::CoffeeType>]
     def self.available_types
       [
         CoffeeMachine::Models::CoffeeType.new('bl', 'Black', ['Coffee']),

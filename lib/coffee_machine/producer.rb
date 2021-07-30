@@ -2,7 +2,15 @@ require 'json'
 require 'kafka'
 
 module CoffeeMachine
+  # Runs the producer portion of the Kafka coffee machine.
+  #
+  # @author Dylan Boyd
   class Producer
+    # Run the coffee producer interactively to provide brewing parameters.
+    #
+    # @param broker_url [String] The Kafka broker URL to consume from.
+    # @param order_id_prefix [String] What to prefix every order ID with.
+    # @return [void]
     def self.run(broker_url, order_id_prefix)
       $kafka = Kafka.new(broker_url, client_id: order_id_prefix)
 
@@ -26,6 +34,8 @@ module CoffeeMachine
     private
 
     # Keep asking for more and more coffee, because one can never have enough.
+    #
+    # @return [void]
     def self.run_coffee_loop
       puts
       print 'What\'s your name, friend? '

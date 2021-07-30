@@ -10,6 +10,9 @@ require 'coffee_machine/models/coffee_type'
 
 require 'coffee_machine/data/coffee_types'
 
+# Core components of the coffee demo to show Kafka and RBS functionality.
+#
+# @author Dylan Boyd
 module CoffeeMachine
   class Error < StandardError; end
   # Your code goes here...
