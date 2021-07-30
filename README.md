@@ -1,35 +1,26 @@
-# CoffeeMachine
+# The Coffee Machine
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/coffee_machine`. To experiment with that code, run `bin/console` for an interactive prompt.
+This demo is to illustrate a basic use case of Ruby 3.0 and Kafka. This will
+show how RBS typing can be used alongside an operating copy of Kafka as part of
+a demo day.
 
-TODO: Delete this and the text above, and describe your gem
+![Coffee making
+demo](https://github.com/dylanboydgc/kafka-demo/raw/main/demo.gif)
 
-## Installation
+## Quickstart
 
-Add this line to your application's Gemfile:
+1. Get an instance of Kafka running. I'm using [the Confluent
+   all-in-one](https://github.com/confluentinc/cp-all-in-one) repository and
+   following their `docker-compose` example using the `cp-all-in-one` directory
+   located within the repo.
+2. Run the consumer using `KAFKA_BROKER=localhost:9092 ruby
+   coffee-consumer.rb`, replacing the broker URL where needed.
+3. Run the producer in a similar fashion:
+   `KAFKA_BROKER=localhost:9092 ruby coffee-producer.rb my-unique-id`. Replace
+   `my-unique-id` with anything you'd like order numbers to be prefixed with.
+4. Interact with the terminal prompt to send orders through the producer.
+5. Watch your coffee orders come through on the consumer.
+6. Profit.
+7. Drink actual coffee.
+8. Multiply profit.
 
-```ruby
-gem 'coffee_machine'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install coffee_machine
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/coffee_machine.

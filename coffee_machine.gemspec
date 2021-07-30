@@ -30,6 +30,13 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
 
+  spec.add_dependency 'ruby-kafka'
+  spec.add_dependency 'yard'
+  spec.add_dependency 'sord'
+  spec.add_dependency 'webrick'
+  spec.add_dependency 'rack'
+  spec.add_dependency 'commander'
+
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
 end

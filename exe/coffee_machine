@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'commander/import'
+require 'coffee_machine'
+
+program :name, 'coffee_machine'
+program :version, '0.0.1'
+program :description, 'Demonstrates Ruby 3, RBS, Sorbet, and Kafka functionality for a company demo.'
+
+command :consume do |c|
+  c.syntax = 'coffee_machine consume [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--broker URL', String, 'The URL of the Kafka broker to connect to'
+  c.action do |args, options|
+    options.default \
+      :broker => 'localhost:9092'
+
+    CoffeeMachine::Consumer.run(options.broker)
+  end
+end
+
+command :produce do |c|
+  c.syntax = 'coffee_machine produce [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--broker URL', String, 'The URL of the Kafka broker to connect to'
+  c.option '--prefix PREFIX', String, 'The prefix to be appended to all order IDs'
+  c.action do |args, options|
+    options.default \
+      :broker => 'localhost:9092',
+      :prefix => 'barista'
+
+    CoffeeMachine::Producer.run(options.broker, args.first)
+  end
+end
+
